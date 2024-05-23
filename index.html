@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taskify</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="static/styles/icons/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="toast-container" id="toastContainer"></div>
+    <h6 id="uid" style="visibility: hidden;opacity: 0;display: none;"></h6>
+    <div id="big">
+        <div id="left">
+            <div class="lmain" id="m1">
+                <div id="circl"><img id="circle-txt" src="" alt="Profile Picture"></div>
+                <div id="emal"><h2 id="j_name"></h2><p id="j_usn"></p></div>
+            </div>
+            <div class="lmain" id="m2">
+                <a href="./index.html"><button id="allLogOut">Log Out</button></a>
+            </div>
+            <div class="lmain" id="m3">
+                <div class="search-wrapper">
+                    <input type="text" placeholder="Search Tasks" name="search" id="search">
+                    <i onclick="clearSearchInput();" id="clear-search" class="fas fa-times"></i>
+                    <i onclick="startVoiceRecognitionForSearch();" id="voice-search-icon" class="fas fa-microphone"></i>
+                </div>
+                <i onclick="searchTasks();" id="ser" class="fas fa-search"></i>
+            </div>
+
+            <div class="lmain" id="m4">
+                <h1>Lists</h1>
+                <div class="new"><h1 onclick="showAddListPopup();">+</h1></div>
+                <div id="list-items"></div>
+            </div>
+
+        </div>
+        
+
+        <div id="main">
+            <div class="mmain" id="tit1">
+                <img style="height: 42px;" src="https://tasking-meet.vercel.app/static/memo.svg" id="lis">
+                <h1 id="curlisname">My List</h1>
+                <div id="hint"><p>⋯</p></div>
+                <div class="mmain" id="menu" style="display: none;">
+                    <div>
+                        <button onclick="darkMode()" id="dmBtn" class="dMode">
+                            <h2>Dark Mode</h2>
+                        </button>
+                        <button onclick="lightMode()" id="lmBtn" class="lMode">
+                            <h2>Light Mode</h2>
+                        </button>
+                    </div>
+                    <div onclick="showDeleteListPopup();"><h2>Delete List</h2></div>
+                </div>
+            </div>
+            
+            <div id="d1">
+                <div id="notask">
+                    <div><img src="https://tasking-meet.vercel.app/static/notask_dark.png"></div>
+                    <h1>No Tasks Here!</h1>
+                    <p>Add your to-dos and keep track of them to get a clear view of the day ahead.</p>
+                </div>
+                <div id="d1-1"></div>
+                <div id="d1-12"></div>
+                <div onclick="hide();" class="shape" id="complete">
+                    <h4><i id="comp-hide" class="fas fa-chevron-down"></i>Completed</h4>
+                </div>
+                <div id="d1-2"></div> <!-- Completed tasks will go here -->
+            </div>
+            <div id="b1">
+                <div class="mmain" id="bt">
+                    <input placeholder="Add Task" type="text" name="new" id="new" autocomplete="off">
+                    <i onclick="startVoiceRecognitionForTask();" id="voice-icon" class="fas fa-microphone"></i>
+                    <div class="add" onclick="addTask();"><span>+</span></div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="right">
+            <div class="rmain" id="up">
+                <div><i class="fas fa-arrow-left rt-icn"></i></div>
+                <h2 id="up_list">My List</h2>
+            </div>
+            <div id="hideOnAdd">
+            <div id="notask2">
+                <div><img src="static/notask2_dark.png"></div>
+                <h1>Time To Relax</h1>
+                <p>Your mind will answer most questions if you learn to relax and wait for the answer.</p>
+            </div>
+            </div>
+            <div id="hideEmpty">
+            <div class="rmain" id="ttitle">
+                <i onclick="checkonrt();" id="type_circle" class="far fa-circle cir"></i>
+                <textarea name="task" id="task"></textarea>
+            </div>
+            <div class="rmain due-date-section" id="tdetail">
+                <div class="due-date-wrapper">
+                    <i class="far fa-calendar-alt rt-icn"></i>
+                    <input type="date" id="date" class="due-date-input">
+                    <label for="date" id="due-date-label" class="due-date-label">Add Due Date</label>
+                </div>
+            </div>
+            <div class="rmain" id="tdetail2">
+                <div><h2><i class="far fa-sticky-note rt-icn"></i> Notes</h2></div>
+                <textarea placeholder="Add Notes" name="note" id="note" autocomplete="off"></textarea>
+            </div>
+            <div class="rmain" id="btm">
+                <div onclick="save_change();" id="done"><i class="fas fa-check"></i></div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="addListPopup" class="popup">
+        <div class="popup-content">
+            <h1>Add New List</h1>
+            <input type="text" name="new_list" id="new_list" placeholder="My New List" autocomplete="off">
+            <button id="submitNewList">Submit</button>
+            <button id="cancelNewList">Cancel</button>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Popup -->
+    <div id="deleteListPopup" class="popup" style="display: none;">
+        <div class="popup-content">
+            <h1>Delete List?</h1>
+            <div class="popup-buttons">
+                <button id="confirmDeleteList">Yes</button>
+                <button id="cancelDeleteList">No</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script src="main1.js"></script> -->
+    <script src="script.js"></script>
+   
+</body>
+</html>

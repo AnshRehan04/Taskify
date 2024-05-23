@@ -1,0 +1,1161 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+:root {
+    --bg-color: #1e1e29;
+    --bg-color2: #27293d;
+    --bg-color3: #16161e;
+    --txt-color: #ffffff;
+
+    --main-colors: #4285F4, #10b47d, #c471ed, #f5af19, #8f94fb;
+
+    --red: #DB4437;
+}
+
+
+#big{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.due-date-label {
+    font-size: 14px;
+    color: white;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+/*  */
+
+
+.task-element {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    margin: 4px 0;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+}
+
+.task-date {
+    font-size: 12px;
+    color: #888;
+}
+
+.task-element {
+    color: white;                /* Text color */
+    background-color: #1E1E29;       /* Background color */
+    padding: 10px;               /* Padding around the text */
+    margin: 5px 0;               /* Margin between tasks */
+    border-radius: 5px;          /* Rounded corners */
+    font-size: 16px;             /* Font size */
+    display: flex;
+    /* align-items: center;         Vertically center align the content */
+}
+
+.taskName {
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.check-mark {
+    background-color: inherit;
+    border: none;
+}
+
+/* Add this to your main-style.css or in a <style> tag in your HTML */
+.task-element {
+    color: white;                /* Text color */
+    background-color: #1E1E29;       /* Background color */
+    padding: 10px;               /* Padding around the text */
+    margin: 5px 0;               /* Margin between tasks */
+    border-radius: 5px;          /* Rounded corners */
+    font-size: 16px;             /* Font size */
+    display: flex;               /* Flexbox for alignment */
+    align-items: center;         /* Vertically center align the content */
+}
+.task-element input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #BA71ED;
+    border-radius: 20px;
+    background-color: transparent;
+    cursor: pointer;
+    -webkit-appearance: none; /* For Safari */
+    appearance: none; /* For other browsers */
+    position: relative;
+    display: inline-block;
+}
+
+.task-element input[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    background-color: transparent;
+    transform: translate(-50%, -50%);
+}
+
+.task-element input[type="checkbox"]:checked::before {
+    content: "\2713"; /* Unicode character for check mark */
+    color: #BA71ED;
+    font-size: 16px; /* Adjust the size of the checkmark */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#left{
+    height: inherit;
+    width: 25%;
+    position: relative;
+    background: var(--bg-color);
+    transition: .3s;
+}
+
+/*  */
+
+/* / */
+
+.task-element span {
+    flex-grow: 1;
+    margin-left: 8px;
+}
+
+#d1-2 .task-element span {
+    text-decoration: line-through;
+    text-decoration-color:
+     red;
+    color: gray;
+}
+
+.lmain{
+    overflow: hidden;
+    position: relative;
+    width: 95%;
+    height: auto;
+    border-radius: 6px;
+    background: var(--bg-color2);
+    color: var(--txt-color);
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+#m1{
+    height: 70px;
+}
+#circle-txt{
+    height: 4em;
+}
+#circl{
+    margin: 5px;
+    background: var(--main-color);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+}
+#circl p{
+    text-align: center;
+    display: block;
+    color: var(--txt-color);
+    font-size: 30px;
+    padding-top: 7px;
+}
+#emal{
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin: 0 0 0 80px;
+}
+#emal h2{
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+}
+#emal p{
+    font-size: 17px;
+}
+
+/* Add these styles to your existing CSS file */
+#menu {
+    position: absolute;
+    right: 10px;
+    top: 50px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 1000;
+}
+
+#menu div {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#menu div:hover {
+    background-color: #f0f0f0;
+}
+
+
+#m2 button{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    color: var(--txt-color);
+    padding: 5px;
+    font-size: 17px;
+}
+#m2 button:hover{
+    cursor: pointer;
+    background-color: #C471ED;
+    /* background-color: var(--main-color); */
+    color: var(--bg-color3);
+    font-weight: bold;
+}
+
+
+#m3{
+    display: flex;
+    flex-wrap: wrap;
+    height: 50px;
+}
+input[type="text"]{
+    background: transparent;
+    height: 50px;
+    width: 95%;
+    margin: auto;
+    border: none;
+    outline: none;
+    caret-color: grey;
+    color: var(--txt-color);
+    font-size: 25px;
+}
+#m3:focus-within{
+    height: 47px;
+    border-bottom: 3px solid var(--main-color);
+}
+#ser{
+    position: absolute;
+    font-size: 25px;
+    top: 12.5px;
+    right: 5px;
+    cursor: pointer;
+}
+
+
+#m4{
+    max-height: 70%;
+    min-height: 120px;
+    resize: vertical;
+}
+#m4::-webkit-resizer{
+    display: none;
+}
+.lmain h1{
+    margin: 10px;
+    font-size: 30px;
+    border-bottom: 3px solid #757575;
+    cursor: default;
+}
+
+.new{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 45px;
+    width: 45px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.new:hover{
+    background: var(--bg-color);
+}
+.new h1{
+    font-weight: bold;
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+}
+
+#list-items{
+    overflow-y: scroll;
+    height: calc(100% - 70px);
+    max-height: calc(100vh - 260px);
+    width: 100%;
+    position: relative;
+}
+#list-items::-webkit-scrollbar{
+    width: 5px;
+}
+#list-items::-webkit-scrollbar-thumb{
+    background: var(--main-color);
+    border-radius: 7px;
+
+}
+#list-items::-webkit-scrollbar-track{
+    background: transparent;
+}
+.listn{
+    margin: 10px;
+    background: transparent;
+    border-radius: 7px;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+}
+.listn i{
+    color: var(--main-color);
+    position: absolute;
+    font-size: 25px;
+    top: 5px;
+    left: 5px;
+}
+.listn p{
+    font-size: 23px;
+    margin: 10px;
+    margin-left: 40px;
+}
+.listn:hover{
+    background: var(--bg-color);
+}
+/* .listn img{
+    height: inherit;
+    width: inherit;
+} */
+.selected{
+    background: var(--bg-color);
+}
+
+
+
+
+
+#main{
+    height: inherit;
+    width: 50%;
+    background: var(--bg-color3);
+    text-align: center;
+    position: relative;
+}
+.mmain{
+    overflow: hidden;
+    position: relative;
+    width: 95%;
+    height: auto;
+    border-radius: 6px;
+    background: var(--bg-color2);
+    color: var(--txt-color);
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+#tit1{
+    overflow: unset;
+}
+#tit1 h1{
+    text-align: left;
+    font-size: 35px;
+    margin: 0 0 0 60px;
+    cursor: default;
+}
+#lis{
+    color: var(--main-color);
+    position: absolute;
+    font-size: 35px;
+    left: 10px;
+    top: 5px;
+    cursor: default;
+}
+#hint{
+    position: absolute;
+    background: var(--bg-color2);
+    height: 35px;
+    width: 35px;
+    text-align: center;
+    font-size: 22.5px;
+    border-radius: 7px;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+#hint:hover{
+    background: var(--bg-color);
+}
+#menu{
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    width: 310px;
+    transition: .5s ease;
+    text-align: left;
+    padding: 0px 3px;
+    z-index: 1000;
+    background: var(--main-color);
+    
+    display: none;
+}
+#menu div{
+    background: var(--bg-color);
+    padding: 7px;
+    margin: 3px 0;
+    cursor: pointer;
+    border-radius: 7px
+}
+#menu div:hover{
+    background: var(--bg-color2);
+}
+
+
+
+
+#d1{
+    width: 95%;
+    height: calc(100vh - 160px);
+    
+    margin: auto;
+    overflow-y: auto;
+}
+#d1::-webkit-scrollbar{
+    width: 5px;
+}
+#d1::-webkit-scrollbar-thumb{
+    background: var(--main-color);
+    border-radius: 7px;
+
+}
+
+
+
+
+
+#d1::-webkit-scrollbar-track{
+    background: transparent;
+}
+#d1-2 p {
+    text-decoration: line-through;
+    text-decoration-color: var(--main-color);
+    text-decoration-thickness: 3px;
+}
+#notask{
+    text-align: center;
+    width: 100%;
+    transform: translateY(20%);
+    /* display: none; */
+}
+#notask div{
+    width: 131px;
+    height: 200px;
+    margin: auto;
+    background: var(--main-color);
+    overflow: hidden;
+    border-radius: 15px;
+    border: 2px solid var(--main-color);
+}
+#notask img{
+    width: inherit;
+    height: inherit;
+    border: 2px;
+}
+
+
+#notask img {
+    filter: invert(29%) sepia(86%) saturate(319%) hue-rotate(235deg) brightness(100%) contrast(100%);
+}
+
+#notask h1{
+    color: var(--txt-color);
+    font-weight: normal;
+    margin-top: 10px;
+}
+#notask p{
+    color: var(--txt-color);
+    width: 75%;
+    margin: auto;
+    margin-top: 10px;
+}
+.shape{
+    padding-bottom: 5px;
+    position: relative;
+    background-color: var(--bg-color);
+    text-align: left;
+    font-size: 17.5px;
+    width: 93%;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 7px;
+    overflow: hidden;
+    color: var(--txt-color);
+    cursor: pointer;
+}
+.cir{
+    position: absolute;
+    top: calc(50% - 12.5px);
+    left: 10px;
+    cursor: pointer;
+    font-size: 25px;
+    color: var(--main-color);
+}
+.shape div{
+    margin: 5px 5px 0 50px;
+}
+i{
+    margin-right: 5px;
+}
+.due{
+    font-size: 12.5px;
+}
+.rd{
+    color: #DB4437;
+    font-weight: bold;
+}
+.dot{
+    font-size: 17px;
+    margin: 0 2px 0 5px;
+}
+.notes{
+    font-size: 12.5px;
+    margin: 0 5px 0 2.5px;
+    display: block;
+    width: 300px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+#complete{
+    margin: 5px;
+    width: 130px;
+    padding: 7px 0 7px 10px;
+    background: var(--bg-color2);
+    display: none;
+}
+
+#b1{
+    position: fixed;
+    bottom: 0;
+    width: 50%;
+    margin: auto;
+    
+    background: transparent;
+}
+#bt{
+    background: var(--bg-color2);
+    width: 95%;
+    margin: auto;
+    margin-bottom: 15px;
+    position: relative;
+    text-align: left;
+}
+#bt div{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 30px;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+#bt div:hover{
+    background: var(--bg-color);
+}
+#bt span{
+    font-size: 35px;
+    font-weight: bold;
+}
+#bt input{
+    font-size: 25px;
+    width: 90%;
+    margin: 5px 0 5px 10px;
+}
+
+
+
+#up{
+    display: none;
+}
+#up div{
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 33px;
+    height: 45px;
+    width: 45px;
+    cursor: pointer;
+}
+
+#up div:hover{
+    background: var(--bg-color);
+}
+/* Add this to main.css */
+#voice-icon {
+    cursor: pointer;
+    margin-left: -30px;
+    font-size: 1.2em;
+}
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+    #voice-icon {
+        margin-left: -10px; /* Adjust margin for smaller screens */
+        font-size: 1em; /* Adjust font size for smaller screens */
+    }
+}
+
+/* Media query for screens smaller than 480px */
+@media (max-width: 480px) {
+    #voice-icon {
+        margin-left: 0; /* Remove margin for very small screens */
+        font-size: 0.8em; /* Further adjust font size for very small screens */
+    }
+}
+
+#up h2{
+    font-size: 30px;
+    margin: 5px 0 5px 65px;
+}
+#right{
+    height: inherit;
+    width: 25%;
+    background: var(--bg-color);
+    color: var(--txt-color);
+    overflow-y: scroll;
+    position: relative;
+    transition: .3s;
+    overflow-x: hidden;
+}
+#right::-webkit-scrollbar{
+    width: 5px;
+}
+#right::-webkit-scrollbar-thumb{
+    background: var(--main-color);
+    border-radius: 7px;
+
+}
+
+#right::-webkit-scrollbar-track{
+    background: transparent;
+}
+#notask2{
+    transform: translateY(55%);
+    text-align: center;
+    width: 100%;
+}
+#hideEmpty {
+    display: none;
+}
+#notask2 div{
+    width: 280px;
+    height: 152.3px;
+    margin: auto;
+    background: var(--main-color);
+}
+#notask2 img{
+    margin-top: -1px;
+    width: 100%;
+    background-color: white;
+    height: 101%;
+}
+#notask2 h1{
+    margin: 10px 0;
+    font-weight: normal;
+}
+#notask2 p{
+    width: 90%;
+    margin: auto;
+}
+.rmain{
+    overflow: hidden;
+    position: relative;
+    width: 95%;
+    height: auto;
+    border-radius: 6px;
+    background: var(--bg-color2);
+    color: var(--txt-color);
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.rt-icn{
+    color: var(--main-color);
+}
+#ttitle{
+    background: var(--bg-color2);
+    min-height: 62px;
+}
+
+/* Popup background */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    overflow: auto; /* Enable scroll if needed */
+}
+
+/* Popup content */
+.popup-content {
+    background-color: #2e2e38; /* Dark background */
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px; /* Some padding */
+    border: 1px solid #888; /* Gray border */
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 400px; /* Maximum width */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+}
+
+/* Popup header */
+.popup-content h1 {
+    margin-top: 0;
+    color: #ffffff; /* White text */
+    font-size: 24px;
+}
+
+/* Popup input */
+.popup-content input[type="text"] {
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 10px; /* Some padding */
+    margin: 10px 0; /* Some margin */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #444; /* Darker background */
+    color: #ffffff; /* White text */
+    font-size: 16px; /* Increase font size */
+}
+
+/* Popup buttons */
+.popup-content button {
+    padding: 10px 20px; /* Some padding */
+    margin: 5px; /* Some margin */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Increase font size */
+}
+
+.popup-content button#submitNewList {
+    background-color: #28a745; /* Green background */
+    color: #ffffff; /* White text */
+}
+
+.popup-content button#cancelNewList {
+    background-color: #dc3545; /* Red background */
+    color: #ffffff; /* White text */
+}
+
+/* Button hover effects */
+.popup-content button:hover {
+    opacity: 0.8; /* Slight transparency on hover */
+}
+
+#task{
+    /* margin: 10px 5px 10px 50px; */
+    width: calc(98% - 45px);
+    font-size: 25px;
+    background: transparent;
+    color: var(--txt-color);
+    outline: none;
+    border: none;
+    resize: none;
+    float: right;
+    
+}
+#task::-webkit-scrollbar{
+    width: 5px;
+}
+#task::-webkit-scrollbar-thumb{
+    background: var(--main-color);
+    border-radius: 7px;
+
+}
+#task::-webkit-scrollbar-track{
+    background: transparent;
+}
+#tdetail div{
+    font-size: 20px;
+    margin: 10px 0 10px 10px;
+    cursor: pointer;
+}
+.cross{
+    position: absolute;
+    font-size: 20px;
+    cursor: pointer;
+    top: 15px;
+    right: 10px;
+}
+.not-set{
+    color: #8d8d8d;
+    cursor: pointer;
+}
+input[type="date"]{
+    background-color: transparent;
+    width: calc(90% - 20px);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: var(--txt-color);
+    font-size: 17.5px;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+}
+::-webkit-calendar-picker-indicator{
+    width: 100%;
+    background-color: transparent;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 7px;
+    opacity: 0;
+}
+#date_present{
+    display: none;
+}
+#date_absent{
+    display: none;
+}
+
+
+
+#tdetail2{
+    text-align: center;
+}
+#tdetail2 div{
+    text-align: left;
+    margin: 5px 0 0 12px;
+    font-size: 12.5px;
+}
+#note{
+    width: 90%;
+    resize: none;
+    font-size: 15px;
+    color: var(--txt-color);
+    background: transparent;
+    outline: none;
+    border: none;
+    margin: 10px 0 10px 0;
+    
+}
+#note::-webkit-scrollbar{
+    width: 5px;
+}
+#note::-webkit-scrollbar-thumb{
+    background: var(--main-color);
+    border-radius: 7px;
+
+}
+#note::-webkit-scrollbar-track{
+    background: transparent;
+}
+#note::-webkit-resizer{
+    display: none;
+}
+
+
+
+
+#btm{
+    position: fixed;
+    bottom: 0;
+    width: 25%;
+    margin: 0;
+    background: transparent;
+}
+#btm div{
+    background: var(--bg-color2);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    margin: 20px;
+    cursor: pointer;
+}
+#btm i{
+    font-size: 30px;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+#done{
+    float: left;
+    color: var(--main-color);
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 40%;
+    justify-content: center;
+}
+#done:hover{
+    background: var(--main-color);
+    color: var(--bg-color2);
+}
+#canc{
+    float: right;
+    color: #DB4437;
+}
+#canc:hover{
+    background-color: #DB4437;
+    color: var(--bg-color2);
+}
+
+
+
+
+
+@media only screen and (max-width: 950px) {
+
+    #left{
+        position: absolute;
+        width: 100vw;
+        
+        top: 0;
+        right: 100%;
+        z-index: 1;
+    }
+    #right{
+        position: absolute;
+        width: 40%;
+        margin-left: 60%;
+        
+    }
+    #main{
+        width: 60%;
+        
+    }
+    #b1{
+        width: 60%;
+    }
+    #btm{
+        width: 40%;
+    }
+}
+@media only screen and (max-width: 600px) {
+
+    #left{
+        position: absolute;
+        width: 100vw;
+        right: 100%;
+    }
+    #right{
+        position: absolute;
+        width: 100vw;
+        left: 40%;
+    }
+    #main{
+        width: 100vw;
+        overflow: hidden;
+    }
+    #b1{
+        width: 100%;
+    }
+    #btm{
+        width: 100%;
+    }
+    #up{
+        display: inherit;
+    }
+}
+
+
+
+
+#add_lis_big, #del_lis_big{
+    display: none;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+    z-index: 100;
+}
+#add_lis_big div, #del_lis_big div{
+    background: var(--bg-color2);
+    border-radius: 7px;
+    width: 250px;
+    height: 100px;
+    margin: auto;
+    padding: 10px;
+    transform: translateY(200%);
+}
+#add_lis_big button,#del_lis_big button{
+    border-radius: 7px;
+    font-size: 17px;
+    background: transparent;
+    padding: 5px;
+    width: 40%;
+    cursor: pointer;
+}
+#sub{
+    border: 3px solid var(--main-color);
+    color: var(--main-color);
+    
+}
+#can{
+    border: 3px solid var(--red);
+    color: var(--red);
+    margin: 7px 0 0 15px;
+}
+
+
+
+#del_lis_big h1{
+    color: var(--txt-color);
+    font-weight: normal;
+    font-size: 25px;
+}
+#yes{
+    border: 3px solid var(--main-color);
+    color: var(--main-color);
+}
+
+
+
+
+
+
+.toast {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--txt-color);
+    color: var(--bg-color3);
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 9999;
+  }
+
+
+
+.fa-tasks{
+    color: #BA71ED;
+}
+
+
+.lmain {
+    margin-bottom: 20px;
+}
+
+#list-items {
+    margin-top: 20px;
+}
+
+.list-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #1E1E29;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.list-item:hover {
+    background-color: #4a4f57;
+}
+
+.list-item i {
+    margin-right: 10px;
+}
+
+.list-item p {
+    margin: 0;
+}
+
+
+/* Popup Styles */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none; /* Ensure popup is hidden by default */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: #2c2c3b;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.popup-content h1 {
+    margin-bottom: 20px;
+}
+
+.popup-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.popup-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.popup-buttons button#confirmDeleteList {
+    background-color: transparent;
+    border: 2px solid red;
+    color: #fff;
+}
+
+.popup-buttons button#cancelDeleteList {
+    background-color: transparent;
+    border: 2px solid #4b4bff;
+    color: #fff;
+}
+
+.lMode {
+    display: none;
+    color: inherit;
+    background-color: inherit;
+    border: none;
+}
+
+.dMode {
+    display: block;
+    color: inherit;
+    background-color: inherit;
+    border: none;
+}
+
+.lMode:hover, .dMode:hover {
+    cursor: pointer;
+}
